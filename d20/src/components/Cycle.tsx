@@ -1,4 +1,4 @@
-import { Rolld20 } from "./RollD20.tsx";
+import { Rolld20 } from "./Rolld20.tsx";
 import { Rolld4 } from "./RollD4.tsx";
 import { Rolld6 } from "./RollD6.tsx";
 import { Rolld8 } from "./RollD8.tsx";
