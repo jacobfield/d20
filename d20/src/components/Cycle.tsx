@@ -5,11 +5,10 @@ import { Rolld8 } from "./RollD8.tsx";
 import { Rolld10 } from "./RollD10.tsx";
 import { Rolld12 } from "./RollD12.tsx";
 import { Rolld100 } from "./RollD100.tsx";
-// import { FaArrowCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useState } from "react";
-/* <FaArrowAltCircleRight />; <FaArrowAltCircleLeft /> */
 
 // upon left arrow click, cycle through array lower, upon right cycle higher
 // define ts array of objects
@@ -23,7 +22,7 @@ const allDice: { dice: JSX.Element; name: string }[] = [
   { dice: <Rolld100 />, name: "D100" },
 ];
 
-function Cycle(): JSX.Element {
+export function Cycle(): JSX.Element {
   // Declaring index state
   const [index, setIndex] = useState<number>(0);
 
@@ -39,6 +38,10 @@ function Cycle(): JSX.Element {
       <button onClick={leftArrowPress}>
         <FaArrowAltCircleLeft></FaArrowAltCircleLeft>
       </button>
+      <div>
+        <p>Roll {allDice[index].name}</p>
+        {allDice[index].dice}
+      </div>
       <button onClick={rightArrowPress}>
         <FaArrowAltCircleRight></FaArrowAltCircleRight>
       </button>
