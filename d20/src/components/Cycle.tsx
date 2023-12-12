@@ -27,23 +27,28 @@ export function Cycle(): JSX.Element {
   const [index, setIndex] = useState<number>(0);
 
   function leftArrowPress(): void {
-    setIndex((previousIndex) => previousIndex - 1);
+    setIndex(
+      // % ensures that the index will always cycle back to the last item when going below 0,
+      (previousIndex) => (previousIndex - 1 + allDice.length) % allDice.length
+    );
   }
+
   function rightArrowPress(): void {
-    setIndex((previousIndex) => previousIndex + 1);
+    // % ensures it cycles back to the first item when going above the array length.
+    setIndex((previousIndex) => (previousIndex + 1) % allDice.length);
   }
 
   return (
-    <div>
+    <div className="diceGrid">
       <button onClick={leftArrowPress}>
-        <FaArrowAltCircleLeft></FaArrowAltCircleLeft>
+        <FaArrowAltCircleLeft className="button"></FaArrowAltCircleLeft>
       </button>
       <div>
         <p>Roll {allDice[index].name}</p>
         {allDice[index].dice}
       </div>
       <button onClick={rightArrowPress}>
-        <FaArrowAltCircleRight></FaArrowAltCircleRight>
+        <FaArrowAltCircleRight className="button"></FaArrowAltCircleRight>
       </button>
     </div>
   );
