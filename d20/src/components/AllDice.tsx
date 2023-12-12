@@ -1,9 +1,12 @@
-import { Rolld20 } from "./Rolld20.tsx";
+import { Cycle } from "./Cycle.tsx";
 
 export function AllDice(): JSX.Element {
+  // put imports into an array (maybe array of objects, so can also have name.)
+  // arrow on either side of page
+  // on arrow clock, move through dice being rendered.
   return (
     <div>
-      <Rolld20></Rolld20>
+      <Cycle></Cycle>
     </div>
   );
 }
