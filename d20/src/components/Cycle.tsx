@@ -5,8 +5,10 @@ import { Rolld8 } from "./RollD8.tsx";
 import { Rolld10 } from "./RollD10.tsx";
 import { Rolld12 } from "./RollD12.tsx";
 import { Rolld100 } from "./RollD100.tsx";
-import { FaArrowCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-import { useState, useEffect } from "react";
+// import { FaArrowCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { useState } from "react";
 /* <FaArrowAltCircleRight />; <FaArrowAltCircleLeft /> */
 
 // upon left arrow click, cycle through array lower, upon right cycle higher
@@ -38,7 +40,7 @@ function Cycle(): JSX.Element {
         <FaArrowAltCircleLeft></FaArrowAltCircleLeft>
       </button>
       <button onClick={rightArrowPress}>
-        <FaArrowCircleRight></FaArrowCircleRight>
+        <FaArrowAltCircleRight></FaArrowAltCircleRight>
       </button>
     </div>
   );
