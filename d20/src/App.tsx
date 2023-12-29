@@ -8,9 +8,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={"dice.png"} className="App-logo" alt="logo" />
-        <p>Roll the dice!</p>
-        <AllDice></AllDice>
+        <p className="appTitle">Roll the dice!</p>
+        <img src={"dice.png"} className="App-logo" alt="logo" />
       </header>
+      <AllDice></AllDice>
     </div>
   );
 }
