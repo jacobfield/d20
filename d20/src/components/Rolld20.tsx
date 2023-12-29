@@ -18,9 +18,14 @@ export function Rolld20(): JSX.Element {
     return roll;
   }
   return (
-    <div>
-      <p className="diceTitle">d20 = {diceRoll} </p>
-      <button onClick={() => setDiceRoll(randomNumber())}>Roll d20</button>
-    </div>
+    <>
+      <img src={`/d20-imgs/${diceRoll}.png`} alt="result of dice roll" />
+      <div>
+        <p className="diceTitle">
+          You rolled <br /> {diceRoll}{" "}
+        </p>
+        <button onClick={() => setDiceRoll(randomNumber())}>Roll d20</button>
+      </div>
+    </>
   );
 }
