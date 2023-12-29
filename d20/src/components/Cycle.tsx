@@ -44,7 +44,7 @@ export function Cycle(): JSX.Element {
         <FaArrowAltCircleLeft className="button"></FaArrowAltCircleLeft>
       </button>
       <div>
-        <p>Roll {allDice[index].name}</p>
+        <p className="diceTitle">Roll {allDice[index].name}</p>
         {allDice[index].dice}
       </div>
       <button onClick={rightArrowPress}>

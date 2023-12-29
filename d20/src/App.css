@@ -1,27 +1,36 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-color: #282c34;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+  display: absolute;
+  top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 10vh;
+  /* display: flex; */
+  /* flex-direction: column; */
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
 }
 
 .App-link {
@@ -50,4 +59,14 @@
   background-color: pink; */
   height: 3rem;
   width: 3rem;
+}
+
+.diceTitle {
+  color: white;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap");
+.appTitle {
+  font-size: 35px;
+  font-family: "IM Fell DW Pica", serif;
 }

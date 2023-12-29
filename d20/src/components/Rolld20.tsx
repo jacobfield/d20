@@ -19,7 +19,7 @@ export function Rolld20(): JSX.Element {
   }
   return (
     <div>
-      <p>d20 = {diceRoll} </p>
+      <p className="diceTitle">d20 = {diceRoll} </p>
       <button onClick={() => setDiceRoll(randomNumber())}>Roll d20</button>
     </div>
   );
