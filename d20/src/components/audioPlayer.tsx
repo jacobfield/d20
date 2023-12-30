@@ -12,17 +12,14 @@ export const allSounds: { sound: HTMLAudioElement; name: string }[] = [
   { sound: dice_3, name: "dice-3" },
 ];
 
-export function AudioPlayer(): React.FC {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+export function playAudio() {
+  let i: number = Math.floor(Math.random() * 4);
+  const audio = new Audio(allSounds[i].sound);
+  audio.play();
 
-  function playAudio() {
-    setIsPlaying(true);
-    let i: number = Math.floor(Math.random() * 4);
-    const audio = new Audio(allSounds[i].sound);
-    audio.play();
-
+  return new Promise<void>((resolve) => {
     audio.addEventListener("ended", () => {
-      setIsPlaying(false);
+      resolve();
     });
-  }
+  });
 }

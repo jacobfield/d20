@@ -8,7 +8,7 @@
 // display the result reactively
 // import that into the react component
 import { useState } from "react";
-import { AudioPlayer } from "./audioPlayer.tsx";
+import { playAudio } from "./audioPlayer.tsx";
 export function Rolld20(): JSX.Element {
   const [diceRoll, setDiceRoll] = useState<number>(randomNumber());
 
@@ -18,9 +18,9 @@ export function Rolld20(): JSX.Element {
     return roll;
   }
 
-  function handleButtonClick() {
+  async function handleButtonClick() {
     setDiceRoll(randomNumber());
-    AudioPlayer();
+    await playAudio();
   }
   return (
     <>
