@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { playAudio } from "./audioPlayer.tsx";
 export function Rolld12(): JSX.Element {
   const [diceRoll, setDiceRoll] = useState<number>(randomNumber());
 
@@ -8,10 +8,14 @@ export function Rolld12(): JSX.Element {
     console.log(roll);
     return roll;
   }
+  async function handleButtonClick() {
+    setDiceRoll(randomNumber());
+    await playAudio();
+  }
   return (
     <div>
       <p className="diceTitle">d12 = {diceRoll} </p>
-      <button onClick={() => setDiceRoll(randomNumber())}>Roll d12</button>
+      <button onClick={handleButtonClick}>Roll d12</button>
     </div>
   );
 }
