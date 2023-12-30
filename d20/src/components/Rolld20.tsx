@@ -8,7 +8,7 @@
 // display the result reactively
 // import that into the react component
 import { useState } from "react";
-
+import { AudioPlayer } from "./audioPlayer.tsx";
 export function Rolld20(): JSX.Element {
   const [diceRoll, setDiceRoll] = useState<number>(randomNumber());
 
@@ -17,6 +17,11 @@ export function Rolld20(): JSX.Element {
     console.log(roll);
     return roll;
   }
+
+  function handleButtonClick() {
+    setDiceRoll(randomNumber());
+    AudioPlayer();
+  }
   return (
     <>
       <img src={`/d20-imgs/${diceRoll}.png`} alt="result of dice roll" />
@@ -24,7 +29,7 @@ export function Rolld20(): JSX.Element {
         <p className="diceTitle">
           You rolled <br /> {diceRoll}{" "}
         </p>
-        <button onClick={() => setDiceRoll(randomNumber())}>Roll d20</button>
+        <button onClick={handleButtonClick}>Roll d20</button>
       </div>
     </>
   );
