@@ -13,9 +13,16 @@ export function Rolld6(): JSX.Element {
     await playAudio();
   }
   return (
-    <div>
-      <p className="diceTitle">d6 = {diceRoll} </p>
-      <button onClick={handleButtonClick}>Roll d6</button>
-    </div>
+    <>
+      <img
+        className="d6DiceImg"
+        src={`/d6-imgs/${diceRoll}.png`}
+        alt="result of dice roll"
+      />
+      <div>
+        <p className="diceTitle">d6 = {diceRoll} </p>
+        <button onClick={handleButtonClick}>Roll d6</button>
+      </div>
+    </>
   );
 }

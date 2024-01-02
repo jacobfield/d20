@@ -72,7 +72,10 @@
 }
 
 .d12DiceImg,
-.d4DiceImg {
+.d4DiceImg,
+.d6DiceImg,
+.d10DiceImg,
+.d8DiceImg {
   height: 150px;
   max-height: 150px;
   width: auto;
