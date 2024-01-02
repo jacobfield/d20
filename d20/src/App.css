@@ -75,10 +75,31 @@
 .d4DiceImg,
 .d6DiceImg,
 .d10DiceImg,
-.d8DiceImg {
+.d8DiceImg,
+.d100DiceImg {
   height: 150px;
   max-height: 150px;
   width: auto;
   max-width: 150px;
   margin: 0.1rem;
+}
+
+/* CSS */
+.d100Container {
+  position: relative;
+}
+
+.d100DiceImg {
+  z-index: -1;
+}
+
+.d100Display {
+  color: white;
+  z-index: 1;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  font-family: "IM Fell DW Pica", serif;
 }
