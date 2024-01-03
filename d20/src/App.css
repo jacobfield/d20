@@ -102,7 +102,11 @@
   font-family: "IM Fell DW Pica", serif;
   font-size: 30px;
 }
-
+.playerName {
+  color: white;
+  font-family: "IM Fell DW Pica", serif;
+  font-size: 20px;
+}
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap");
 .appTitle {
   font-size: 35px;
@@ -168,6 +172,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 1rem;
+  grid-template-rows: 1fr 1fr;
 }
 
 .Player2 {
@@ -190,6 +195,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 1rem;
+  grid-template-rows: 1fr 1fr;
   transform: rotate(180deg);
   transform-origin: center;
 }

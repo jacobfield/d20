@@ -7,6 +7,16 @@ import { HiMiniMinusSmall } from "react-icons/hi2"; // minus <HiMiniMinusSmall /
 export function LifeCounter(): JSX.Element {
   const [player1Life, setPlayer1Life] = useState<number>(20);
   const [player2Life, setPlayer2Life] = useState<number>(20);
+  const [player1Name, setPlayer1Name] = useState<string>("Player 1");
+  const [player2Name, setPlayer2Name] = useState<string>("Player 2");
+
+  function handle1NameChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setPlayer1Name(event.target.value);
+  }
+
+  function handle2NameChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setPlayer2Name(event.target.value);
+  }
 
   function handle1Increment() {
     setPlayer1Life(player1Life + 1);
@@ -30,6 +40,9 @@ export function LifeCounter(): JSX.Element {
   return (
     <div className="playerContainer">
       <div className="Player2">
+        <br></br>
+        <p className="playerName">{player2Name}</p>
+        <br></br>
         <HiMiniMinusSmall
           className="playerGridItem"
           onClick={handle2Decrement}
@@ -46,6 +59,9 @@ export function LifeCounter(): JSX.Element {
       <br></br>
       <br></br>
       <div className="Player1">
+        <br></br>
+        <p className="playerName">{player1Name}</p>
+        <br></br>
         <HiMiniMinusSmall
           className="playerGridItem"
           onClick={handle1Decrement}
