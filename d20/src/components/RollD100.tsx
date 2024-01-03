@@ -23,8 +23,11 @@ export function Rolld100(): JSX.Element {
         <p className="d100Display">{diceRoll === 100 ? "💯" : diceRoll}</p>
       </div>
       <div>
-        <p className="diceTitle">d100 = {diceRoll} </p>
-        <button onClick={handleButtonClick}>Roll d100</button>
+        {/* <p className="diceTitle">d100 = {diceRoll} </p> */}
+        <br></br>
+        <button className="rollButton" onClick={handleButtonClick}>
+          Roll d100
+        </button>
       </div>
     </>
   );

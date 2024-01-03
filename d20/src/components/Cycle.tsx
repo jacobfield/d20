@@ -42,14 +42,18 @@ export function Cycle(): JSX.Element {
 
   return (
     <div className="diceGrid">
-      <button className="buttonContainer" onClick={leftArrowPress}>
+      <button className="buttonContainer diceGridItem" onClick={leftArrowPress}>
         <FaArrowLeft className="button"></FaArrowLeft>
       </button>
       <div>
-        <p className="diceTitle">{allDice[index].name}</p>
+        <p className="diceTitle diceGridItem">{allDice[index].name}</p>
+        <br></br>
         {allDice[index].dice}
       </div>
-      <button className="buttonContainer" onClick={rightArrowPress}>
+      <button
+        className="buttonContainer diceGridItem"
+        onClick={rightArrowPress}
+      >
         <FaArrowRight className="button"></FaArrowRight>
       </button>
     </div>
