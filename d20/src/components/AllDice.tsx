@@ -5,7 +5,7 @@ export function AllDice(): JSX.Element {
   // arrow on either side of page
   // on arrow clock, move through dice being rendered.
   return (
-    <div>
+    <div className="allDiceContainer">
       <Cycle></Cycle>
     </div>
   );

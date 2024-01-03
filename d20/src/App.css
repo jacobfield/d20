@@ -1,13 +1,28 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
+  flex: 1; /* This will make .App take up the remaining space */
   text-align: center;
-  height: 100vh;
   background-color: #282c34;
 }
 
 .App-logo {
   height: 20vmin;
   pointer-events: none;
-  display: absolute;
+  /* display: relative; */
   top: 0;
 }
 
@@ -54,7 +69,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: min-content;
+  height: 100%;
 }
 .diceGridItem {
   text-align: center; /* Center text horizontally within the item */
@@ -62,7 +77,7 @@
   justify-content: center; /* Center content horizontally within the item */
   align-items: center; /* Center content vertically within the item */
   margin: auto;
-  height: min-content;
+  height: 100%;
 }
 .button {
   /* color: blue; */
@@ -151,8 +166,8 @@
 }
 
 .playerContainer {
-  height: min-content;
-  width: 100%;
+  height: 100%;
+  width: min-content;
 }
 
 .Player1 {
@@ -161,7 +176,7 @@
   font-family: "IM Fell DW Pica", serif;
   background-color: #88ab75;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 1rem 1.5rem;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -184,7 +199,7 @@
   background-color: #de8f6e;
   font-family: "IM Fell DW Pica", serif;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 1rem 1.5rem;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -272,4 +287,17 @@
   border-color: #bb7357;
   color: white;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  html,
+  body,
+  .App {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+  }
 }
