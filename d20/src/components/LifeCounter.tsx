@@ -29,11 +29,30 @@ export function LifeCounter(): JSX.Element {
 
   return (
     <div className="playerContainer">
-      <div className="Player2">{player2Life}</div>
+      <div className="Player2">
+        <HiMiniMinusSmall
+          className="playerGridItem"
+          onClick={handle2Decrement}
+        />
+        <p className="playerGridItem">{player2Life}</p>
+        <FiPlus className="playerGridItem" onClick={handle2Increment} />
+      </div>
       <br></br>
+      <br></br>
+      <button className="rollButton" onClick={resetLife}>
+        <FaArrowsRotate />
+      </button>
 
       <br></br>
-      <div className="Player1">{player1Life}</div>
+      <br></br>
+      <div className="Player1">
+        <HiMiniMinusSmall
+          className="playerGridItem"
+          onClick={handle1Decrement}
+        />
+        <p className="playerGridItem">{player1Life}</p>
+        <FiPlus className="playerGridItem" onClick={handle1Increment} />
+      </div>
     </div>
   );
 }

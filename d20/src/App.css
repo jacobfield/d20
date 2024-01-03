@@ -54,6 +54,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  height: min-content;
 }
 .diceGridItem {
   text-align: center; /* Center text horizontally within the item */
@@ -61,6 +62,7 @@
   justify-content: center; /* Center content horizontally within the item */
   align-items: center; /* Center content vertically within the item */
   margin: auto;
+  height: min-content;
 }
 .button {
   /* color: blue; */
@@ -97,6 +99,8 @@
 }
 .diceTitle {
   color: white;
+  font-family: "IM Fell DW Pica", serif;
+  font-size: 30px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap");
@@ -140,13 +144,14 @@
 }
 
 .playerContainer {
-  height: 50vh;
+  height: min-content;
   width: 100%;
 }
 
 .Player1 {
-  height: 30%;
-  width: 100%;
+  height: 40%;
+  width: 80%;
+  font-family: "IM Fell DW Pica", serif;
   background-color: #88ab75;
   display: inline-block;
   padding: 10px 20px;
@@ -158,12 +163,18 @@
   border-radius: 15px; /* Rounded corners */
   color: #ffffff; /* Text color */
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin: auto;
+  /* Grid stylings */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
 }
 
 .Player2 {
-  height: 30%;
-  width: 100%;
-  background-color: #2d93ad;
+  height: 40%;
+  width: 80%;
+  background-color: #de8f6e;
+  font-family: "IM Fell DW Pica", serif;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -174,7 +185,18 @@
   border-radius: 15px; /* Rounded corners */
   color: #ffffff; /* Text color */
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin: auto;
   /* Grid Stylings */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+.playerGridItem {
+  margin: auto;
+  font-size: 46px;
 }
 
 .rollButton {
