@@ -1,9 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { FaArrowsRotate } from "react-icons/fa6";
+import { FiPlus } from "react-icons/fi";
+import { HiMiniMinusSmall } from "react-icons/hi2";
 
-// icon components
-import { FaArrowsRotate } from "react-icons/fa6"; // reset <FaArrowsRotate />
-import { FiPlus } from "react-icons/fi"; // Plus <FiPlus />
-import { HiMiniMinusSmall } from "react-icons/hi2"; // minus <HiMiniMinusSmall />
 export function LifeCounter(): JSX.Element {
   const [player1Life, setPlayer1Life] = useState<number>(20);
   const [player2Life, setPlayer2Life] = useState<number>(20);
@@ -13,14 +12,6 @@ export function LifeCounter(): JSX.Element {
     useState<boolean>(false);
   const [isEditingPlayer2Name, setIsEditingPlayer2Name] =
     useState<boolean>(false);
-
-  const toggleEditPlayer1Name = () => {
-    setIsEditingPlayer1Name((prev) => !prev);
-  };
-
-  const toggleEditPlayer2Name = () => {
-    setIsEditingPlayer2Name((prev) => !prev);
-  };
 
   function handle1NameChange(event: React.ChangeEvent<HTMLInputElement>) {
     setPlayer1Name(event.target.value);
@@ -33,6 +24,7 @@ export function LifeCounter(): JSX.Element {
   function handle1Increment() {
     setPlayer1Life(player1Life + 1);
   }
+
   function handle1Decrement() {
     setPlayer1Life(player1Life - 1);
   }
@@ -44,17 +36,25 @@ export function LifeCounter(): JSX.Element {
   function handle2Decrement() {
     setPlayer2Life(player2Life - 1);
   }
+
   function resetLife() {
     setPlayer1Life(20);
     setPlayer2Life(20);
   }
 
+  const toggleEditPlayer1Name = () => {
+    setIsEditingPlayer1Name((prev) => !prev);
+  };
+  const toggleEditPlayer2Name = () => {
+    setIsEditingPlayer2Name((prev) => !prev);
+  };
   return (
     <div className="playerContainer">
       <div className="Player2">
         <br></br>
         {isEditingPlayer2Name ? (
           <input
+            className="inputBox2"
             type="text"
             value={player2Name}
             onChange={handle2NameChange}
@@ -74,7 +74,7 @@ export function LifeCounter(): JSX.Element {
         <p className="playerGridItem">{player2Life}</p>
         <FiPlus className="playerGridItem" onClick={handle2Increment} />
       </div>
-      <br></br>
+
       <br></br>
       <button className="rollButton" onClick={resetLife}>
         <FaArrowsRotate />
@@ -86,6 +86,7 @@ export function LifeCounter(): JSX.Element {
         <br></br>
         {isEditingPlayer1Name ? (
           <input
+            className="inputBox1"
             type="text"
             value={player1Name}
             onChange={handle1NameChange}
