@@ -9,6 +9,7 @@
 // import that into the react component
 import { useState } from "react";
 import { playAudio } from "./audioPlayer.tsx";
+import { FaDiceD20 } from "react-icons/fa6";
 export function Rolld20(): JSX.Element {
   const [diceRoll, setDiceRoll] = useState<number>(randomNumber());
 
@@ -24,12 +25,19 @@ export function Rolld20(): JSX.Element {
   }
   return (
     <>
-      <img src={`/d20-imgs/${diceRoll}.png`} alt="result of dice roll" />
+      <img
+        className="d20DiceImg"
+        src={`/d20-imgs/${diceRoll}.png`}
+        alt="result of dice roll"
+      />
       <div>
-        <p className="diceTitle">
+        {/* <p className="diceTitle">
           You rolled <br /> {diceRoll}{" "}
-        </p>
-        <button onClick={handleButtonClick}>Roll d20</button>
+        </p> */}
+        <br></br>
+        <button className="rollButton" onClick={handleButtonClick}>
+          Roll d20
+        </button>
       </div>
     </>
   );

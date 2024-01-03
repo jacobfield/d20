@@ -52,19 +52,64 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 1rem;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: min-content;
 }
-
+.diceGridItem {
+  text-align: center; /* Center text horizontally within the item */
+  display: flex;
+  justify-content: center; /* Center content horizontally within the item */
+  align-items: center; /* Center content vertically within the item */
+  margin: auto;
+  height: min-content;
+}
 .button {
-  /* color: blue;
-  background-color: pink; */
+  /* color: blue; */
+  /* background: pink; */
   height: 3rem;
   width: 3rem;
+  background: rgba(0, 0, 0, 0);
+  padding: 1px;
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0px solid #3498db;
+  border-radius: 50%;
+  background-color: #08324e;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  max-height: 4rem;
+  max-width: 4rem;
+  padding: 1rem;
+}
+.buttonContainer:hover {
+  background-color: #ffffff; /* Hover background color */
+  color: #3498db; /* Hover text color */
+  border-color: #ffffff; /* Hover border color */
+}
 .diceTitle {
   color: white;
+  font-family: "IM Fell DW Pica", serif;
+  font-size: 30px;
 }
-
+.playerName {
+  color: white;
+  font-family: "IM Fell DW Pica", serif;
+  font-size: 20px;
+  /* text-decoration: underline; */
+  /* font-weight: bold; */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap");
 .appTitle {
   font-size: 35px;
@@ -76,7 +121,8 @@
 .d6DiceImg,
 .d10DiceImg,
 .d8DiceImg,
-.d100DiceImg {
+.d100DiceImg,
+.d20DiceImg {
   height: 150px;
   max-height: 150px;
   width: auto;
@@ -102,4 +148,128 @@
   transform: translate(-50%, -50%);
   font-size: 35px;
   font-family: "IM Fell DW Pica", serif;
+}
+
+.playerContainer {
+  height: min-content;
+  width: 100%;
+}
+
+.Player1 {
+  height: 40%;
+  width: 80%;
+  font-family: "IM Fell DW Pica", serif;
+  background-color: #88ab75;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px; /* Rounded corners */
+  color: #ffffff; /* Text color */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin: auto;
+  /* Grid stylings */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-template-rows: 1fr 1fr;
+}
+
+.Player2 {
+  height: 40%;
+  width: 80%;
+  background-color: #de8f6e;
+  font-family: "IM Fell DW Pica", serif;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px; /* Rounded corners */
+  color: #ffffff; /* Text color */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin: auto;
+  /* Grid Stylings */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-template-rows: 1fr 1fr;
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+.playerGridItem {
+  margin: auto;
+  font-size: 46px;
+}
+
+.rollButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #3498db; /* Background color */
+  color: #ffffff; /* Text color */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.rollButton:hover {
+  background-color: #ffffff; /* Hover background color */
+  color: #3498db; /* Hover text color */
+  border-color: #ffffff; /* Hover border color */
+}
+
+.inputBox1 {
+  font-family: "IM Fell DW Pica", serif;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease-in-out;
+  text-align: center; /* Center the text */
+  background-color: #6a8d58;
+  font-size: 20px;
+}
+
+.inputBox1:hover {
+  border-color: #6a8d58;
+}
+
+.inputBox1:focus {
+  outline: none;
+  border-color: #6a8d58;
+  color: white;
+  font-size: 20px;
+}
+
+.inputBox2 {
+  font-family: "IM Fell DW Pica", serif;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease-in-out;
+  text-align: center; /* Center the text */
+  background-color: #bb7357;
+  font-size: 20px;
+}
+
+.inputBox2:hover {
+  border-color: #bb7357;
+}
+
+.inputBox2:focus {
+  outline: none;
+  border-color: #bb7357;
+  color: white;
+  font-size: 20px;
 }

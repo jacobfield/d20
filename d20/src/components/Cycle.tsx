@@ -5,9 +5,10 @@ import { Rolld8 } from "./RollD8.tsx";
 import { Rolld10 } from "./RollD10.tsx";
 import { Rolld12 } from "./RollD12.tsx";
 import { Rolld100 } from "./RollD100.tsx";
+import { LifeCounter } from "./LifeCounter.tsx";
 
-import { FaArrowAltCircleRight } from "react-icons/fa";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { useState } from "react";
 
 // upon left arrow click, cycle through array lower, upon right cycle higher
@@ -20,6 +21,7 @@ const allDice: { dice: JSX.Element; name: string }[] = [
   { dice: <Rolld10 />, name: "D10" },
   { dice: <Rolld12 />, name: "D12" },
   { dice: <Rolld100 />, name: "D100" },
+  { dice: <LifeCounter />, name: "Life Counter" },
 ];
 
 export function Cycle(): JSX.Element {
@@ -40,15 +42,19 @@ export function Cycle(): JSX.Element {
 
   return (
     <div className="diceGrid">
-      <button onClick={leftArrowPress}>
-        <FaArrowAltCircleLeft className="button"></FaArrowAltCircleLeft>
+      <button className="buttonContainer diceGridItem" onClick={leftArrowPress}>
+        <FaArrowLeft className="button"></FaArrowLeft>
       </button>
       <div>
-        <p className="diceTitle">Roll {allDice[index].name}</p>
+        <p className="diceTitle diceGridItem">{allDice[index].name}</p>
+        <br></br>
         {allDice[index].dice}
       </div>
-      <button onClick={rightArrowPress}>
-        <FaArrowAltCircleRight className="button"></FaArrowAltCircleRight>
+      <button
+        className="buttonContainer diceGridItem"
+        onClick={rightArrowPress}
+      >
+        <FaArrowRight className="button"></FaArrowRight>
       </button>
     </div>
   );

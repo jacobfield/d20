@@ -20,8 +20,11 @@ export function Rolld6(): JSX.Element {
         alt="result of dice roll"
       />
       <div>
-        <p className="diceTitle">d6 = {diceRoll} </p>
-        <button onClick={handleButtonClick}>Roll d6</button>
+        {/* <p className="diceTitle">d6 = {diceRoll} </p> */}
+        <br></br>
+        <button className="rollButton" onClick={handleButtonClick}>
+          Roll d6
+        </button>
       </div>
     </>
   );
