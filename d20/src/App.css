@@ -1,20 +1,23 @@
-/* html,
+html,
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: 100%;
-} */
-/* #root {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#root {
   height: 100%;
 }
 body {
   display: flex;
   flex-direction: column;
-} */
+}
 
 .App {
-  flex: 1; /* This will make .App take up the remaining space */
+  flex: 1;
+  /* This will make .App take up the remaining space */
   text-align: center;
   background-color: #282c34;
 }
@@ -298,7 +301,7 @@ body {
     margin: auto;
     padding: 0;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
   }
   .diceGrid {
     width: 90%;
