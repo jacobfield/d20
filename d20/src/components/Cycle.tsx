@@ -42,7 +42,10 @@ export function Cycle(): JSX.Element {
 
   return (
     <div className="diceGrid">
-      <button className="buttonContainer diceGridItem" onClick={leftArrowPress}>
+      <button
+        className="buttonContainer diceGridItem leftArrow"
+        onClick={leftArrowPress}
+      >
         <FaArrowLeft className="button"></FaArrowLeft>
       </button>
       <div>
@@ -51,7 +54,7 @@ export function Cycle(): JSX.Element {
         {allDice[index].dice}
       </div>
       <button
-        className="buttonContainer diceGridItem"
+        className="buttonContainer diceGridItem rightArrow"
         onClick={rightArrowPress}
       >
         <FaArrowRight className="button"></FaArrowRight>
