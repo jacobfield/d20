@@ -30,6 +30,9 @@ export function LifeCounter(): JSX.Element {
   return (
     <div className="playerContainer">
       <div className="Player2">{player2Life}</div>
+      <br></br>
+
+      <br></br>
       <div className="Player1">{player1Life}</div>
     </div>
   );
