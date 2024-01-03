@@ -9,6 +9,18 @@ export function LifeCounter(): JSX.Element {
   const [player2Life, setPlayer2Life] = useState<number>(20);
   const [player1Name, setPlayer1Name] = useState<string>("Player 1");
   const [player2Name, setPlayer2Name] = useState<string>("Player 2");
+  const [isEditingPlayer1Name, setIsEditingPlayer1Name] =
+    useState<boolean>(false);
+  const [isEditingPlayer2Name, setIsEditingPlayer2Name] =
+    useState<boolean>(false);
+
+  const toggleEditPlayer1Name = () => {
+    setIsEditingPlayer1Name((prev) => !prev);
+  };
+
+  const toggleEditPlayer2Name = () => {
+    setIsEditingPlayer2Name((prev) => !prev);
+  };
 
   function handle1NameChange(event: React.ChangeEvent<HTMLInputElement>) {
     setPlayer1Name(event.target.value);
@@ -41,7 +53,19 @@ export function LifeCounter(): JSX.Element {
     <div className="playerContainer">
       <div className="Player2">
         <br></br>
-        <p className="playerName">{player2Name}</p>
+        {isEditingPlayer2Name ? (
+          <input
+            type="text"
+            value={player2Name}
+            onChange={handle2NameChange}
+            onBlur={toggleEditPlayer2Name}
+            placeholder="Enter Player 2's Name"
+          />
+        ) : (
+          <p className="playerName" onClick={toggleEditPlayer2Name}>
+            {player2Name}
+          </p>
+        )}
         <br></br>
         <HiMiniMinusSmall
           className="playerGridItem"
@@ -60,7 +84,19 @@ export function LifeCounter(): JSX.Element {
       <br></br>
       <div className="Player1">
         <br></br>
-        <p className="playerName">{player1Name}</p>
+        {isEditingPlayer1Name ? (
+          <input
+            type="text"
+            value={player1Name}
+            onChange={handle1NameChange}
+            onBlur={toggleEditPlayer1Name}
+            placeholder="Enter Player 1's Name"
+          />
+        ) : (
+          <p className="playerName" onClick={toggleEditPlayer1Name}>
+            {player1Name}
+          </p>
+        )}
         <br></br>
         <HiMiniMinusSmall
           className="playerGridItem"
