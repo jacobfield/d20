@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  height: 100vh;
+  height: 100%;
   background-color: #282c34;
 }
 
@@ -55,8 +55,16 @@
 }
 
 .button {
-  /* color: blue;
-  background-color: pink; */
+  /* color: blue; */
+  /* background: pink; */
+  height: 3rem;
+  width: 3rem;
+  background: rgba(0, 0, 0, 0);
+  padding: 1px;
+}
+
+.buttonContainer {
+  background: rgba(0, 0, 0, 0);
   height: 3rem;
   width: 3rem;
 }
@@ -102,4 +110,21 @@
   transform: translate(-50%, -50%);
   font-size: 35px;
   font-family: "IM Fell DW Pica", serif;
+}
+
+.playerContainer {
+  height: 35rem;
+  width: 100%;
+}
+
+.Player1 {
+  height: 45%;
+  width: 100%;
+  background-color: #218380;
+}
+
+.Player2 {
+  height: 45%;
+  width: 100%;
+  background-color: #00a6fb;
 }

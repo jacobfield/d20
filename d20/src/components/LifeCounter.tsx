@@ -22,4 +22,15 @@ export function LifeCounter(): JSX.Element {
   function handle2Decrement() {
     setPlayer2Life(player2Life - 1);
   }
+  function resetLife() {
+    setPlayer1Life(20);
+    setPlayer2Life(20);
+  }
+
+  return (
+    <div className="playerContainer">
+      <div className="Player2">{player2Life}</div>
+      <div className="Player1">{player1Life}</div>
+    </div>
+  );
 }
