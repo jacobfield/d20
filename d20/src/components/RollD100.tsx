@@ -18,7 +18,7 @@ export function Rolld100(): JSX.Element {
         <img
           className="d100DiceImg"
           src="/d100-imgs/blank.png"
-          alt={`Dice showing result of roll = ${diceRoll}`}
+          alt={`Dice showing result of roll`}
         />
         <p className="d100Display">{diceRoll === 100 ? "💯" : diceRoll}</p>
       </div>
